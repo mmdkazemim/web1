@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -72,11 +71,13 @@
     <script>
         function printGreeting() {
             var userName = document.getElementById("userName").value;
-            var greetingMessage = " بتخمم که اسمت" + " " + userName + " " + "هست ، کیر منم نیستی ، سال جدیدتم مبارک امیدوارم سال قشنگی داشته باشی ، دوست دارم بوس به کونت ❤️";
-
-            document.getElementById("greetingMessage").innerText = greetingMessage;
+            if (userName !== "") {
+                var greetingMessage = " بتخمم که اسمت" + " " + userName + " " + "هست <br> تو قشنگ ترین و قوی ترین آدمی هستی که وجود داره <br>فقط خودت میتونی به خودت کمک کنی پس 1403 آدمه بهتری باش و بجنگ برای موفقیت <br>سال جدیدت مبارک امیدوارم سال قشنگی داشته باشی ، دوستت دارم ماچ به کونت ❤️ <br><br> m4md.l";
+                document.getElementById("greetingMessage").innerHTML = greetingMessage;
+            } else {
+                document.getElementById("greetingMessage").innerHTML = "";
+            }
         }
     </script>
 </body>
 </html>
-
