@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قلب متحرک با انیمیشن تپیدن</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div class="heart"></div>
+<div class="caption">ماچ بهت خانوم خالقی </div>
+<div class="caption">m4md.l</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+<style>
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #420335;
+  position: relative; /* اضافه شده */
+}
+
+.heart {
+  position: relative;
+  width: 200px;
+  height: 180px;
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 100px;
+  height: 160px;
+  background-color: #ff00aa;
+  border-radius: 100px 100px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.caption {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  position: absolute;
+  bottom: 150px; /* فاصله از پایین اضافه شده است */
+  width: 100%;
+}
+.caption:last-of-type {
+  position: absolute;
+  bottom: 20px; /* یا هر فاصله‌ای که مایلید */
+}
+.caption:last-of-type {
+  font-size: 20px; /* یا هر اندازه‌ای که مایلید */
+}
+
+
+
+
+
+
+</style>
+
+<script>
+// انتظار داده شود تا محتویات صفحه بارگیری شود
+document.addEventListener('DOMContentLoaded', function () {
+  // یافتن المان قلب
+  var heart = document.querySelector('.heart');
+  // تنظیم زمان برای شروع انیمیشن
+  setTimeout(function () {
+    // حذف کلاسی که انیمیشن را فعال می‌کند
+    heart.classList.remove('drawHeart');
+  }, 100);
+});
+
+</script>
+
+</body>
+</html>
